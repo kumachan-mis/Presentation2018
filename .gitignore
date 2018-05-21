@@ -21,11 +21,3 @@
 
 # Debug Files
 debug*/
-
-
-#Design
-*.asta
-
-#Sourse
-src
-media
