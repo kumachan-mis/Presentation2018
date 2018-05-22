@@ -15,10 +15,10 @@ public class AlternativeButtons {
         interval = gui.SIZE / 41;
 
         button1 = new Button(gui, left, upper,
-                width, height, "./media/" + name1 + ".jpg");
+                width, height, "./" + name1 + ".jpg");
         upper += height + interval;
         button2 = new Button(gui, left, upper,
-                width, height, "./media/" + name2 + ".jpg");
+                width, height, "./" + name2 + ".jpg");
     }
 
     public void draw() {

@@ -38,6 +38,6 @@ class BeginningOfGame extends ClientState {
         } else if(info.getPlayerId() == parentId) {
             return new PutSecretPiece(gui);
         }
-        return new Waiting(gui, info.getNickname()[parentId] +"が伏せるカードを選択中");
+        return new Waiting(gui, info.getNickname()[parentId] +"が伏せる駒を選択中");
     }
 }
