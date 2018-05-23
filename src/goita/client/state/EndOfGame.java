@@ -8,7 +8,7 @@ class EndOfGame extends ClientState {
 
     EndOfGame() {
         ok = new Button(17 * gui.SIZE / 41, 37 * gui.SIZE / 41,
-                7 * gui.SIZE / 41, 3 * gui.SIZE / 41, "./終わる.jpg");
+                7 * gui.SIZE / 41, 3 * gui.SIZE / 41, "./images/終わる.jpg");
     }
 
     @Override

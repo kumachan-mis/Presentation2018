@@ -19,14 +19,14 @@ public class GameView {
     private void initSettings() {
         SIZE = gui.SIZE;
         UNIT = SIZE / 41;
-        bgImage = gui.loadImage("./背景.jpg");
+        bgImage = gui.loadImage("./images/背景.jpg");
         bgImage.resize(SIZE, SIZE);
         gui.textAlign(gui.LEFT, gui.CENTER);
     }
 
     public void showStartView() {
         initSettings();
-        PImage start = gui.loadImage("./スタート画面.jpg");
+        PImage start = gui.loadImage("./images/スタート画面.jpg");
         start.resize(SIZE, SIZE);
         gui.background(start);
     }
@@ -96,11 +96,11 @@ public class GameView {
         String[] nickname = info.getNickname();
 
         for(int p = 0; p < StateMachine.PLAYER_NUM; ++p) {
-            if(p == info.getParentId()) {
-                gui.image(gui.loadImage("./親.jpg"),
+            if(p % 2 == 0) {
+                gui.image(gui.loadImage("./images/赤チーム.jpg"),
                         ulx, uly, width, height);
             } else {
-                gui.image(gui.loadImage("./子.jpg"),
+                gui.image(gui.loadImage("./images/青チーム.jpg"),
                         ulx, uly, width, height);
             }
             gui.fill(0xff, 0xff, 0xff);

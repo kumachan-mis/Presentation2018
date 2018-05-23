@@ -13,7 +13,7 @@ class ShowFullOpen extends ClientState {
     ShowFullOpen() {
         super();
         ok = new Button(17 * gui.SIZE / 41, 19 * gui.SIZE / 41,
-                7 * gui.SIZE / 41, 3 * gui.SIZE / 41,"./了解.jpg");
+                7 * gui.SIZE / 41, 3 * gui.SIZE / 41,"./images/了解.jpg");
         myFieldPiece = new MyFieldPiece();
         handPiece = new HandPieceButtons();
         handPiece.killAll();

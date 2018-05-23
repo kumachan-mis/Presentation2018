@@ -9,7 +9,7 @@ public class Start extends ClientState {
 
     public Start() {
         ok = new Button(17 * gui.SIZE / 41, 37 * gui.SIZE / 41,
-                7 * gui.SIZE / 41, 3 * gui.SIZE / 41, "./始める.jpg");
+                7 * gui.SIZE / 41, 3 * gui.SIZE / 41, "./images/始める.jpg");
     }
 
     @Override

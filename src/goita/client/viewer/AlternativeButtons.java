@@ -16,10 +16,10 @@ public class AlternativeButtons {
     public AlternativeButtons(String name1, String name2) {
         int y = upper;
         button1 = new Button(left, y,
-                width, height, "./" + name1 + ".jpg");
+                width, height, "./images/" + name1 + ".jpg");
         y += height + interval;
         button2 = new Button(left, y,
-                width, height, "./" + name2 + ".jpg");
+                width, height, "./images/" + name2 + ".jpg");
     }
 
     public void draw() {

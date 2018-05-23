@@ -14,12 +14,12 @@ public class Piece {
 
     public static String getImgpath(int pieceKind, int type) {
         if(type >= StateMachine.PLAYER_NUM || type < 0) return "";
-        else return "./piece/" + name[pieceKind] + type + ".jpg";
+        else return "./images/piece/" + name[pieceKind] + type + ".jpg";
     }
 
     public static String getSecretImgpath(int type) {
         if(type >= StateMachine.PLAYER_NUM || type < 0) return "";
-        else return "./piece/伏" + type + ".jpg";
+        else return "./images/piece/伏" + type + ".jpg";
     }
     public static Piece getInstance() {
         return piece;
