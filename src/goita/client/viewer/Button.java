@@ -9,18 +9,21 @@ public class Button {
         { put('S', 0.98f);  put('M', 1.00f);  put('L', 1.02f);}
     };
 
-    private final GUIClient gui;
+    private static GUIClient gui;
     private final int ulx, uly;
     private final int width, height;
     private final PImage img;
     private char targetLevel = 'M';
     private float currentScale = 1.00f;
     private boolean isClicked = false;
-    private boolean clickConpleted = false;
+    private boolean clickCompleted = false;
     private  boolean isActive = true;
 
-    public Button(GUIClient gui, int ulx, int uly, int width, int height, String imgpath) {
-        this.gui = gui;
+    public static void init(GUIClient gui) {
+        Button.gui = gui;
+    }
+
+    public Button(int ulx, int uly, int width, int height, String imgpath) {
         this.ulx = ulx;
         this.uly = uly;
         this.width = width;
@@ -80,15 +83,15 @@ public class Button {
         dy = (height - currentHeight) / 2.00f;
 
         gui.image(img, ulx + dx, uly + dy, currentWidth, currentHeight);
-        clickConpleted = (isClicked && currentScale == SCALE.get('L'));
+        clickCompleted = (isClicked && currentScale == SCALE.get('L'));
     }
 
     public boolean isClicked() {
-        return clickConpleted;
+        return clickCompleted;
     }
 
     private void reset() {
-        clickConpleted = false;
+        clickCompleted = false;
         isClicked = false;
     }
 

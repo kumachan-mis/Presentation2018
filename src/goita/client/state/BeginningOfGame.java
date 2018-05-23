@@ -9,8 +9,7 @@ class BeginningOfGame extends ClientState {
     private MyFieldPiece myFieldPiece;
     private HandPieceButtons handPiece;
 
-    BeginningOfGame(GUIClient gui) {
-        super(gui);
+    BeginningOfGame() {
         myFieldPiece = new MyFieldPiece();
         handPiece = new HandPieceButtons();
     }
@@ -36,8 +35,8 @@ class BeginningOfGame extends ClientState {
             drawn = true;
             return this;
         } else if(info.getPlayerId() == parentId) {
-            return new PutSecretPiece(gui);
+            return new PutSecretPiece();
         }
-        return new Waiting(gui, info.getNickname()[parentId] +"が伏せる駒を選択中");
+        return new Waiting(info.getNickname()[parentId] +"が伏せる駒を選択中");
     }
 }

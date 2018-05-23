@@ -7,9 +7,8 @@ class ShowScore extends ClientState {
     private boolean drawn = false;
     private boolean endOfGame = false;
     private Button ok;
-    ShowScore(GUIClient gui) {
-        super(gui);
-        ok = new Button(gui, 17 * gui.SIZE / 41, 37 * gui.SIZE / 41,
+    ShowScore() {
+        ok = new Button(17 * gui.SIZE / 41, 37 * gui.SIZE / 41,
                 7 * gui.SIZE / 41, 3 * gui.SIZE / 41, "./了解.jpg");
     }
 
@@ -43,10 +42,10 @@ class ShowScore extends ClientState {
         System.gc();
 
         if(endOfGame){
-            return new EndOfGame(gui);
+            return new EndOfGame();
         }
         info.resetGameInfo();
-        return new ReceiveHandPiece(gui);
+        return new ReceiveHandPiece();
     }
 
     @Override

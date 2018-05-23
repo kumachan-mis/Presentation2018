@@ -9,8 +9,8 @@ class PutSecretPiece extends ClientState{
     private MyFieldPiece myFieldPiece;
     private HandPieceButtons handPiece;
 
-    PutSecretPiece(GUIClient gui) {
-        super(gui);
+    PutSecretPiece() {
+        super();
         myFieldPiece = new MyFieldPiece();
         handPiece = new HandPieceButtons();
     }
@@ -42,6 +42,6 @@ class PutSecretPiece extends ClientState{
             drawn = true;
             return this;
         }
-        return new PutAttackPiece(gui);
+        return new PutAttackPiece();
     }
 }

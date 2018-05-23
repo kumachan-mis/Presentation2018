@@ -11,8 +11,7 @@ class Waiting extends ClientState{
     private String resultMessage;
     private boolean irregular = false;
 
-    Waiting(GUIClient gui, String waitingMessage) {
-        super(gui);
+    Waiting(String waitingMessage) {
         myFieldPiece = new MyFieldPiece();
         handPiece = new HandPieceButtons();
         handPiece.killAll();
@@ -81,18 +80,18 @@ class Waiting extends ClientState{
 
         switch (resultMessage) {
             case "conti":
-                return new BeginningOfGame(gui);
+                return new BeginningOfGame();
             case "reset":
-                return new ReceiveHandPiece(gui);
+                return new ReceiveHandPiece();
             case "secret":
                 return stillWaiting(info.getNickname()[info.getParentId()] + "が攻撃に使う駒を選択中");
             case "attack":
                 return stillWaiting("");
             case "winnerJudge":
                 if(irregular)
-                    return new ShowFullOpen(gui);
+                    return new ShowFullOpen();
                 else if(info.getPlayerId() == info.getMainPlayerId())
-                    return new GuardOrPass(gui);
+                    return new GuardOrPass();
                 else
                     return stillWaiting(info.getNickname()[info.getMainPlayerId()] + "が防御か流すか選択中");
             case "guard":
@@ -101,9 +100,9 @@ class Waiting extends ClientState{
                 return stillWaiting("防御成功\n" + info.getNickname()[info.getParentId()] + "が攻撃に使う駒を選択中");
             case "pass":
                 if(irregular)
-                    return new BeginningOfGame(gui);
+                    return new BeginningOfGame();
                 else if(info.getPlayerId() == info.getMainPlayerId())
-                    return new GuardOrPass(gui);
+                    return new GuardOrPass();
                 else
                     return stillWaiting(info.getNickname()[info.getMainPlayerId()] + "が防御か流すか選択中");
             default:

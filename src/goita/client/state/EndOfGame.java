@@ -6,9 +6,8 @@ class EndOfGame extends ClientState {
     private Button ok;
     boolean drawn = false;
 
-    EndOfGame(GUIClient gui) {
-        super(gui);
-        ok = new Button(gui, 17 * gui.SIZE / 41, 37 * gui.SIZE / 41,
+    EndOfGame() {
+        ok = new Button(17 * gui.SIZE / 41, 37 * gui.SIZE / 41,
                 7 * gui.SIZE / 41, 3 * gui.SIZE / 41, "./終わる.jpg");
     }
 

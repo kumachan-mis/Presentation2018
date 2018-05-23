@@ -4,7 +4,6 @@ import goita.client.GUIClient;
 import goita.client.state.GameInfo;
 
 public class HandPieceButtons {
-    private static GUIClient gui;
     private static GameInfo info;
     private int[] handPieceIndex;
     private Button[] handPiece = new Button[Piece.FIELD_PIECE];
@@ -14,9 +13,7 @@ public class HandPieceButtons {
     private static int interval;
 
     public static void init(GUIClient gui) {
-        HandPieceButtons.gui = gui;
         info = GameInfo.getInstance();
-
         int SIZE = gui.SIZE;
         ulx = 5 * SIZE / 41;
         uly = 36 * SIZE / 41;
@@ -33,8 +30,7 @@ public class HandPieceButtons {
             int end = handPieceIndex[pieceKind];
 
             for(int n = begin; n < end; ++n) {
-                handPiece[n] = new Button(gui, x, uly,
-                        width, height, Piece.getImgpath(pieceKind, 0));
+                handPiece[n] = new Button(x, uly, width, height, Piece.getImgpath(pieceKind, 0));
                 x += width + interval;
             }
         }

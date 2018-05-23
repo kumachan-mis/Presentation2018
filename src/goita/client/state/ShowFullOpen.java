@@ -10,9 +10,9 @@ class ShowFullOpen extends ClientState {
     private MyFieldPiece myFieldPiece;
     private HandPieceButtons handPiece;
 
-    ShowFullOpen(GUIClient gui) {
-        super(gui);
-        ok = new Button(gui, 17 * gui.SIZE / 41, 19 * gui.SIZE / 41,
+    ShowFullOpen() {
+        super();
+        ok = new Button(17 * gui.SIZE / 41, 19 * gui.SIZE / 41,
                 7 * gui.SIZE / 41, 3 * gui.SIZE / 41,"./了解.jpg");
         myFieldPiece = new MyFieldPiece();
         handPiece = new HandPieceButtons();
@@ -42,6 +42,6 @@ class ShowFullOpen extends ClientState {
             drawn = true;
             return this;
         }
-        return new ShowScore(gui);
+        return new ShowScore();
     }
 }

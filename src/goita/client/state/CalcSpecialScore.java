@@ -7,9 +7,9 @@ class CalcSpecialScore extends ClientState {
     private boolean drawn = false;
     private int maxInfantry;
 
-    CalcSpecialScore(GUIClient gui, int maxInfantory) {
-        super(gui);
-        this.maxInfantry = maxInfantory;
+    CalcSpecialScore(int maxInfantry) {
+        super();
+        this.maxInfantry = maxInfantry;
     }
 
     @Override
@@ -64,6 +64,6 @@ class CalcSpecialScore extends ClientState {
             drawn = true;
             return this;
         }
-        return new ShowScore(gui);
+        return new ShowScore();
     }
 }

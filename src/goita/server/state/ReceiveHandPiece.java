@@ -5,7 +5,6 @@ import goita.server.GoitaServerThread;
 
 class ReceiveHandPiece extends ServerState{
     private int nextState = 0;
-    private int maxFantory = -1;
 
     ReceiveHandPiece(GoitaServerThread thread) {
         super(thread);
@@ -35,7 +34,7 @@ class ReceiveHandPiece extends ServerState{
         sc.writeSingleMessage(nextState);
 
         if(nextState == 3) {
-            synchro.setMaxInfantory(infantry);
+            synchro.setMaxInfantry(infantry);
             synchro.synchro();
             sc.writeSingleMessage(synchro.getResultInt());
         }

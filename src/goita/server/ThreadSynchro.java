@@ -5,7 +5,7 @@ import goita.StateMachine;
 public class ThreadSynchro {
     private boolean in = false;
     private boolean out = true;
-    private int waitnum = 0;
+    private int waitNum = 0;
 
     private int parentId;
     private int mainPlayerId;
@@ -63,8 +63,8 @@ public class ThreadSynchro {
         else if(infantry == Piece.PIECE_NUM[Piece.PIECE_KIND - 1] / 2) resultInt = 1;
     }
 
-    public synchronized void setMaxInfantory(int infantory) {
-        if(resultInt < infantory) resultInt = infantory;
+    public synchronized void setMaxInfantry(int infantry) {
+        if(resultInt < infantry) resultInt = infantry;
     }
 
     public synchronized void resetParams() {
@@ -75,14 +75,14 @@ public class ThreadSynchro {
 
     private synchronized void in() {
         try {
-            if(waitnum == StateMachine.PLAYER_NUM - 1) {
-                waitnum++;
+            if(waitNum == StateMachine.PLAYER_NUM - 1) {
+                waitNum++;
                 out = false;
                 in = true;
                 notifyAll();
             }
             while(!in) {
-                waitnum++;
+                waitNum++;
                 wait();
             }
         } catch(InterruptedException e) {
@@ -92,15 +92,15 @@ public class ThreadSynchro {
 
     private synchronized void out() {
         try {
-            if(waitnum == 1) {
-                waitnum--;
+            if(waitNum == 1) {
+                waitNum--;
                 in = false;
                 out = true;
                 notifyAll();
             }
 
             while(!out) {
-                waitnum--;
+                waitNum--;
                 wait();
             }
         } catch(InterruptedException e) {

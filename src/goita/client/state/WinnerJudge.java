@@ -10,8 +10,7 @@ class WinnerJudge extends ClientState {
     private MyFieldPiece myFieldPiece;
     private HandPieceButtons handPiece;
 
-    WinnerJudge(GUIClient gui) {
-        super(gui);
+    WinnerJudge() {
         myFieldPiece = new MyFieldPiece();
         handPiece = new HandPieceButtons();
         handPiece.killAll();
@@ -57,7 +56,7 @@ class WinnerJudge extends ClientState {
             drawn = true;
             return this;
         }
-        if(isWinner) return new ShowFullOpen(gui);
-        return new Waiting(gui, info.getNickname()[info.getMainPlayerId()] + "が防御か流すか選択中");
+        if(isWinner) return new ShowFullOpen();
+        return new Waiting(info.getNickname()[info.getMainPlayerId()] + "が防御か流すか選択中");
     }
 }

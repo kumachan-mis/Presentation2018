@@ -2,22 +2,23 @@ package goita.client.viewer;
 import goita.client.GUIClient;
 
 public class AlternativeButtons {
-    private int upper, left,  width, height, interval;
-    private final GUIClient gui;
+    private static int upper, left,  width, height, interval;
     private Button button1, button2;
 
-    public AlternativeButtons(GUIClient gui, String name1, String name2) {
-        this.gui = gui;
+    public static void init(GUIClient gui) {
         upper = 17 * gui.SIZE / 41;
         left = 13 * gui.SIZE / 41;
         width = 15 * gui.SIZE / 41;
         height = 3 * gui.SIZE / 41;
         interval = gui.SIZE / 41;
+    }
 
-        button1 = new Button(gui, left, upper,
+    public AlternativeButtons(String name1, String name2) {
+        int y = upper;
+        button1 = new Button(left, y,
                 width, height, "./" + name1 + ".jpg");
-        upper += height + interval;
-        button2 = new Button(gui, left, upper,
+        y += height + interval;
+        button2 = new Button(left, y,
                 width, height, "./" + name2 + ".jpg");
     }
 

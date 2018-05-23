@@ -6,12 +6,10 @@ import goita.client.viewer.HandPieceButtons;
 class TalkWithFriend extends ClientState {
     private boolean drawn = false;
     private int whichClicked = -1;
-    private AlternativeButtons contiOrReset = new AlternativeButtons(gui,
-            "続行", "配り直し");
+    private AlternativeButtons contiOrReset = new AlternativeButtons("続行", "配り直し");
     private HandPieceButtons handPiece;
 
-    TalkWithFriend(GUIClient gui) {
-        super(gui);
+    TalkWithFriend() {
         handPiece = new HandPieceButtons();
         handPiece.killAll();
     }
@@ -46,9 +44,9 @@ class TalkWithFriend extends ClientState {
     protected ClientState decideState() {
         switch (whichClicked) {
             case 1:
-                return new BeginningOfGame(gui);
+                return new BeginningOfGame();
             case 2:
-                return new ReceiveHandPiece(gui);
+                return new ReceiveHandPiece();
             default:
                 drawn = true;
                 return this;

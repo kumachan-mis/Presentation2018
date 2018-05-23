@@ -5,16 +5,19 @@ import goita.client.GUIClient;
 import goita.client.viewer.GameView;
 
 public abstract class ClientState extends StateMachine {
-    final GUIClient gui;
-    final ReadWrite cc;
-    final GameInfo info = GameInfo.getInstance();
-    final GameView view;
+    static GUIClient gui;
+    static ReadWrite cc;
+    static GameInfo info = GameInfo.getInstance();
+    static GameView view;
 
-    ClientState(GUIClient gui) {
-        super();
-        this.gui = gui;
+    public static void init(GUIClient gui) {
+        ClientState.gui = gui;
         cc = gui.getReadWrite();
         view = gui.getView();
+    }
+
+    ClientState() {
+
     }
 
     @Override

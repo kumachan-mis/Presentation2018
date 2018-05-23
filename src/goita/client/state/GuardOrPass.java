@@ -11,14 +11,11 @@ class GuardOrPass extends ClientState{
     private boolean hasGuardian;
     private boolean kingIsAvailable;
 
-    private AlternativeButtons guardOrPass = new AlternativeButtons(gui,
-            "防御", "流す");
+    private AlternativeButtons guardOrPass = new AlternativeButtons("防御", "流す");
     private MyFieldPiece myFieldPiece;
     private HandPieceButtons handPiece;
 
-    GuardOrPass(GUIClient gui) {
-        super(gui);
-
+    GuardOrPass() {
         int attackPiece = info.getAttackPiece();
         hasGuardian = (info.getHandPiece()[attackPiece] > 0);
         kingIsAvailable = (info.getHandPiece()[0] > 0 && 1 <= attackPiece && attackPiece <= 5);
@@ -71,12 +68,12 @@ class GuardOrPass extends ClientState{
     protected ClientState decideState() {
         switch (whichClicked) {
             case 1:
-                return new PutGuardPiece(gui);
+                return new PutGuardPiece();
             case 2:
                 if(irregular)
-                    return new BeginningOfGame(gui);
+                    return new BeginningOfGame();
                 else
-                    return new Waiting(gui, info.getNickname()[info.getMainPlayerId()] + " が防御か流すか選択中");
+                    return new Waiting(info.getNickname()[info.getMainPlayerId()] + " が防御か流すか選択中");
             default:
                 drawn = true;
                 return this;

@@ -7,9 +7,8 @@ public class Start extends ClientState {
     private Button ok;
     private boolean drawn = false, signalReceived = false;
 
-    public Start(GUIClient gui) {
-        super(gui);
-        ok = new Button(gui, 17 * gui.SIZE / 41, 37 * gui.SIZE / 41,
+    public Start() {
+        ok = new Button(17 * gui.SIZE / 41, 37 * gui.SIZE / 41,
                 7 * gui.SIZE / 41, 3 * gui.SIZE / 41, "./始める.jpg");
     }
 
@@ -36,6 +35,6 @@ public class Start extends ClientState {
             return this;
         }
         cc.writeYesOrNo(true);
-        return new ReceiveHandPiece(gui);
+        return new ReceiveHandPiece();
     }
 }

@@ -2,9 +2,7 @@ package goita.client;
 import goita.ReadWrite;
 import goita.client.state.ClientState;
 import goita.client.state.Start;
-import goita.client.viewer.GameView;
-import goita.client.viewer.HandPieceButtons;
-import goita.client.viewer.MyFieldPiece;
+import goita.client.viewer.*;
 import processing.core.PApplet;
 
 public class GUIClient extends PApplet{
@@ -18,9 +16,14 @@ public class GUIClient extends PApplet{
         SIZE = 4 * displayHeight / 5;
         size(SIZE, SIZE);
         cc = GoitaClient.getReadWrite();
-        state = new Start(this);
+
+        ClientState.init(this);
+        Button.init(this);
         HandPieceButtons.init(this);
+        AlternativeButtons.init(this);
         MyFieldPiece.init(this);
+
+        state = new Start();
     }
 
     @Override

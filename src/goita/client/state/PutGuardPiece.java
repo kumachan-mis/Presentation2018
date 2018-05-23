@@ -9,8 +9,8 @@ class PutGuardPiece extends ClientState {
     private MyFieldPiece myFieldPiece;
     private HandPieceButtons handPiece;
 
-    PutGuardPiece(GUIClient gui) {
-        super(gui);
+    PutGuardPiece() {
+        super();
         myFieldPiece = new MyFieldPiece();
         handPiece = new HandPieceButtons();
         handPiece.setForGuard();
@@ -45,6 +45,6 @@ class PutGuardPiece extends ClientState {
             drawn = true;
             return this;
         }
-        return new PutAttackPiece(gui);
+        return new PutAttackPiece();
     }
 }
