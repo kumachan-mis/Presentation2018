@@ -54,7 +54,8 @@ public class GoitaClient {
             String confirm = scan.nextLine().toLowerCase();
             correctInput = confirm.equals("y") || confirm.equals("yes");
         }
-        
+        scan.close();
+
         cc.writeSingleMessage(nickname);
         //S1: ニックネームを送信
         GameInfo.getInstance().setPlayerId(
