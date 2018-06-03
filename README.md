@@ -7,7 +7,7 @@ Copyright 2018 Kumachan(Yuya SUWA), MIS.W, Waseda Univ.
 
 
 ## 遊ぶには
-このプログラムの実行にはJava仮想マシン(JVM)が必要です。Java8のダウンロードは下記より行ってください。
+このプログラムの実行にはJava仮想マシン(JVM)が必要です。Java8のダウンロードは下記より行ってください。  d
 [Oracle Javaをインストールするには](https://www.java.com/ja/download/help/download_options.xml)
 
 以下に実行の手順を記載しておきます。
